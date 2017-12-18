@@ -1,0 +1,34 @@
+{% extends "shop/base.html" %}
+
+{% block title %}
+Checkout
+{% endblock %}
+
+{% block content %}
+    <h1>订单</h1>
+    
+    <div class="order-info">
+        <h3>你的订单</h3>
+        <ul>
+            {% for item in cart %}
+            <li>
+                {{ item.quantity }}x {{ item.product.name }}
+                <span>￥{{ item.total_price }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+    <p>总价: ￥{{ cart.get_total_price }}</p>
+</div>
+
+<form action="." method="post" class="order-form">
+
+
+    <p><label style="color:#fff" for="id_full_name">姓名:</label> <input id="id_full_name" maxlength="50" name="full_name" type="text"></p>
+    <p><label style="color:#fff" for="id_email">电子邮箱:</label> <input id="id_email" maxlength="254" name="email" type="email"></p>
+    <p><label style="color:#fff" for="id_address">收货地址:</label> <input id="id_address" maxlength="250" name="address" type="text"></p>
+    <p><label style="color:#fff" for="id_postal_code">邮编:</label> <input id="id_postal_code" maxlength="20" name="postal_code" type="text"></p>
+    <p><label style="color:#fff" for="id_telphone">联系电话:</label> <input id="id_telphone" maxlength="50" name="telphone" type="text"></p>
+    <p><input type="submit" value="提交"></p>
+    {% csrf_token %}
+</form>
+{% endblock %}

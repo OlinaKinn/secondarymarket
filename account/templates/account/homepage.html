@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load staticfiles%}
+{% block title %}Home Page{% endblock %}
+{% block content1 %}
+    <h1 style="text-align:left">打开方式</h1>
+    <p>接下来会告诉你这个网站的正确打开方式！</p>
+    <h2>网站简介：</h2><p>在这个网站中，您可以进行闲置物品的借入借出、买卖交易以及物物交换。</p>
+    <h3>个人信息：</h3><p>这里可以修改你的个人信息。</p>
+    <h3>闲置市场：</h3><p>闲置市场中很多用户上传的廉价但是质量优秀的闲置商品供大家选择</p>
+    <h3>博客分享：</h3><p>这里有来自不同用户的博文分享，大家一起交流吧！</p> 
+    <h4>那么接下来放一些优秀的产品给大家看看</h4>
+    <img src="{% static "img/timg.jpg" %}">
+    <img src="{% static "img/aj13.jpg" %}">
+{% endblock %}
